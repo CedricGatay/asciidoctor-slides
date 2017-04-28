@@ -1,0 +1,483 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Asciidoctor, documentation from the undead (code)</title><meta name="generator" content="Asciidoctor 1.5.5 (Bespoke.js converter)"><meta name="mobile-web-app-capable" content="yes"><link rel="stylesheet" href="build/build.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.0/css/font-awesome.min.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.min.css"></head><body><article class="deck"><section class="title" data-title=""><h1>Asciidoctor, documentation from the undead (code)</h1><p><span class="bigIcon"><span class="icon"><i class="fa fa-stethoscope"></i></span></span></p>
+<pre><code>                     _   _      _                _
+                    (_) (_)    | |              | |
+  __ _   ___   ___   _   _   __| |  ___    ___  | |_   ___   _ __
+ / _` | / __| / __| | | | | / _` | / _ \  / __| | __| / _ \ | '__|
+| (_| | \__ \| (__  | | | || (_| || (_) || (__  | |_ | (_) || |
+ \__,_| |___/ \___| |_| |_| \__,_| \___/  \___|  \__| \___/ |_|
+
+                documentation from the undead (code)</code></pre></section>
+<section><h2><span class="image"><img src="./images/CG_BW.jpg" alt="CG BW"></span></h2><p><span class="icon"><i class="fa fa-twitter"></i></span> @Cedric_Gatay</p>
+<p><span class="icon"><i class="fa fa-code"></i></span> Developer</p>
+<p><span class="icon"><i class="fa fa-empire"></i></span> Code-Troopers co-founder</p>
+<p><span class="icon"><i class="fa fa-google"></i></span> GDG Tours lead</p></section>
+<section><h2><span class="icon"><i class="fa fa-code-fork"></i></span></h2><ul><li><span class="primary"><span class="icon"><i class="fa fa-bus"></i></span> <a href="http://navigtours.com">Navig&#8217;Tours</a> <span class="icon"><i class="fa fa-apple"></i></span> <span class="icon"><i class="fa fa-android"></i></span></span></li><li><span class="primary"><span class="icon"><i class="fa fa-music"></i></span> Aucard de Tours / Terres du son <span class="icon"><i class="fa fa-apple"></i></span> <span class="icon"><i class="fa fa-android"></i></span></span></li><li><span class="primary"><span class="icon"><i class="fa fa-github"></i></span> FOSS:</span><ul><li><span class="primary"><span class="icon"><i class="fa fa-calendar"></i></span> Android Betterpickers <span class="icon"><i class="fa fa-android"></i></span></span></li><li><span class="primary"><span class="icon"><i class="fa fa-github-alt"></i></span> sbt plugins <span class="icon"><i class="fa fa-globe"></i></span></span></li><li><span class="primary"><span class="icon"><i class="fa fa-github-alt"></i></span> wicket-hot-reload <span class="icon"><i class="fa fa-globe"></i></span></span></li><li><span class="primary"><span class="icon"><i class="fa fa-gitlab"></i></span> Gitlab contributor <span class="icon"><i class="fa fa-globe"></i></span></span></li></ul></li></ul>
+<aside role="note"><p>One can also notice various Wicket framework contributions, docker images, jenkins plugins, restx, parsley.js bridges&#8230;&#8203;</p></aside></section>
+<section><h2><span class="icon"><i class="fa fa-life-ring"></i></span></h2><ul><li><span class="primary"><span class="icon"><i class="fa fa-keyboard-o"></i></span> Code</span></li><li><span class="primary"><span class="icon"><i class="fa fa-fire"></i></span> Build</span></li><li><span class="primary"><span class="icon"><i class="fa fa-book"></i></span> Books</span></li><li><span class="primary"><span class="icon"><i class="fa fa-dashboard"></i></span> Test: OpenDeviceLab Tours</span></li></ul>
+<aside role="note"><ul><li><span class="primary">At times, I code for a living, the rest of the time, I code for fun.</span></li><li><span class="primary">I love helping team to shape their environment to achieve an easy to deliver pipeline (I gave a talk about this at a DevOps meetup in 2012).</span></li><li><span class="primary">I worked with Packt Publishing on Wicket 6, Maven 3, Android development, JavaEE 7 books</span></li><li><span class="primary">And ultimately, as we have devices at @Code-Troopers, we have opened an OpenDeviceLab (one of the first in France)
+to allow people to test their websites / applications on various devices.</span></li></ul></aside></section>
+<section><h2><span class="icon"><i class="fa fa-comment"></i></span></h2><ul><li><span class="primary"><span class="icon"><i class="fa fa-shopping-bag"></i></span> Brown Bag Lunch</span></li><li><span class="primary"><span class="icon"><i class="fa fa-google"></i></span> Google Developer Group Tours Lead</span></li><li><span class="primary"><span class="icon"><i class="fa fa-institution"></i></span> Polytech&#8217;Tours instructor</span></li></ul>
+<aside role="note"><p>I love talking with people and discover how they work and think. That&#8217;s why I do my best to talk and allow the people to talk to each other.</p></aside></section>
+<section class="image" style="background-image: url(./images/full_writing.gif); background-size: cover; background-repeat: no-repeat">
+<aside role="note"><p>I&#8217;ve always loved writing technical things. From my own tips on my very intimate website (at first) to full length articles on magasines and website.
+I even participated in writing books.</p>
+<p>However, there was always a thing that was bothering me, is that I was forced to use a counter intuitive editor.
+And being not always easily focused, I could lose a lost of time trying to produce a neat output instead of concentrate on what was important: <strong>content</strong> !</p>
+<p>Asciidoctor allowed me to write and focus on the <strong>content</strong>, the <strong>presentation</strong> is the next step.</p></aside></section>
+<section><h2>What is Asciidoc ?</h2><ul><li><span class="primary">Plain text markup language</span></li><li><span class="primary">Markdown on steroid</span></li><li><span class="primary">Multiple backends</span></li><li><span class="primary">Attributes</span></li><li><span class="primary">Extensions</span></li></ul></section>
+<section><h2>Agenda</h2><ul><li><span class="primary">Syntax</span></li><li><span class="primary">Project setup</span></li><li><span class="primary">Feedback</span></li></ul>
+<aside role="note"><ul><li><span class="primary">An extensive look on the syntax that make Asciidoc, Markdown users should not be worried at first, but will discover niceties.</span></li><li><span class="primary">Examples using Maven / Gradle to integrate in your project</span></li><li><span class="primary">Feedback from usage in multiple project</span></li></ul></aside></section>
+<section class="image" style="background-image: url(./images/full_syntax.jpg); background-size: cover; background-repeat: no-repeat">
+<aside role="note"><p>"que va piano va sano</p></aside></section>
+<section><h2>Bullet point</h2><div class="two-columns build build-items"><pre class="source"><code data-lang="asciidoc" class="language-asciidoc prettyprint">* coruscant
+* dagoba
+** C3PO
+** R2D2</code></pre>
+<ul class="left-content"><li><span class="primary">coruscant</span></li><li><span class="primary">dagoba</span><ul><li><span class="primary">C3PO</span></li><li><span class="primary">R2D2</span></li></ul></li></ul></div></section>
+<section><h2>Ordered lists</h2><div class="two-columns build build-items"><pre class="source"><code data-lang="asciidoc" class="language-asciidoc prettyprint">1. Anakin
+1. Darth</code></pre>
+<ol><li><span class="primary">Anakin</span></li><li><span class="primary">Darth</span></li></ol></div>
+<aside role="note"><p>Don&#8217;t bother numbering properly. Warning issued though</p></aside></section>
+<section><h2>Font variants</h2><div class="build build-items"><pre class="source"><code data-lang="asciidoc" class="language-asciidoc prettyprint">*Death* _star_ [.line-through]#is# [.underline]#unbreakable# !</code></pre>
+<p><strong>Death</strong> <em>star</em> <span class="line-through">is</span> <span class="underline">unbreakable</span> !</p></div></section>
+<section><h2>Monospace content</h2><div class="full-width build build-items"><pre class="source"><code data-lang="asciidoc" class="language-asciidoc prettyprint">Change the default password (which is `weakisyoda`)</code></pre>
+<p>Change the default password (which is <code>weakisyoda</code>)</p></div></section>
+<section><h2>Headings</h2><div class="build build-items"><pre class="source"><code data-lang="asciidoc" class="language-asciidoc prettyprint">## SUB HEADING
+
+===== SUB^4 HEADING</code></pre>
+<h2> SUB HEADING </h2>
+<h5> SUB^4 HEADING </h5></div></section>
+<section class="image" style="background-image: url(./images/full_rich.gif); background-size: cover; background-repeat: no-repeat"></section>
+<section><h2>Links</h2><div class="two-columns center build build-items"><pre class="source"><code data-lang="asciidoc" class="language-asciidoc prettyprint">icon:globe[]
+https://code-troopers.com[CT]</code></pre>
+<p><span class="icon"><i class="fa fa-globe"></i></span>
+<a href="https://code-troopers.com">CT</a></p></div></section>
+<section><h2>Images</h2><div class="two-columns build build-items"><pre class="source"><code data-lang="asciidoc" class="language-asciidoc prettyprint">image::bow_before_me.jpg[]</code></pre>
+<figure class="image"><img src="./images/bow_before_me.jpg" alt="bow before me"></figure></div></section>
+<section><h2>Quotes</h2><div class="build build-items"><pre class="source"><code data-lang="asciidoc" class="language-asciidoc prettyprint">"Doubt is the path to the bad code. Doubt leads to hurry.
+Hurry leads to bugs. Bugs leads to fixes."
+-- CT Build bot, #jenkins@Slack</code></pre>
+<figure class="quote"><blockquote><p>Doubt is the path to the bad code. Doubt leads to hurry.
+Hurry leads to bugs. Bugs leads to fixes.</p></blockquote><figcaption>CT Build bot <cite>#jenkins@Slack</cite></figcaption></figure></div></section>
+<section><h2>Stem</h2><div class="two-columns center build build-items"><pre class="source"><code data-lang="asciidoc" class="language-asciidoc prettyprint">stem:[sqrt(4) = 2]</code></pre>
+<p>\$sqrt(4) = 2\$</p></div>
+<aside role="note"><p>This uses mathjax to render the equations. LatexMath can even be used (if you want to play it rough)</p></aside></section>
+<section><h2>Admonition</h2><div class="center build build-items"><pre class="source"><code data-lang="asciidoc" class="language-asciidoc prettyprint">NOTE: Testing the tests is called Testception</code></pre>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Testing the tests is called Testception
+</td>
+</tr>
+</table>
+</div></div>
+<aside role="note"><p>A firm warning or reprimand</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<code>NOTE</code>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<code>TIP</code>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<code>IMPORTANT</code>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock caution">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-caution" title="Caution"></i>
+</td>
+<td class="content">
+<code>CAUTION</code>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+<code>WARNING</code>
+</td>
+</tr>
+</table>
+</div></aside></section>
+<section><h2>Tables</h2><div class="styledTable build build-items"><pre class="source"><code data-lang="asciidoc" class="language-asciidoc prettyprint">[cols="2a,5a,8a"]
+|===
+h| Name h| Port h| Description
+| Nginx | 80 | Docker proxy
+| JBoss &gt;m| 9010 | https://www.google.fr[Base app container]
+|===</code></pre>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 13.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 53.3334%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Name</p></th>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Port</p></th>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Description</p></th>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><p>Nginx</p></div></td>
+<td class="tableblock halign-left valign-top"><div><p>80</p></div></td>
+<td class="tableblock halign-left valign-top"><div><p>Docker proxy</p></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><p>JBoss</p></div></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><code>9010</code></p></td>
+<td class="tableblock halign-left valign-top"><div><p><a href="https://www.google.fr">Base app container</a></p></div></td>
+</tr>
+</tbody>
+</table></div></section>
+<section><h2>File includes</h2><div class="center build build-items"><pre class="source"><code data-lang="asciidoc" class="language-asciidoc prettyprint">include::samples/_death_star_plan.adoc[]</code></pre>
+<figure class="image"><img src="./images/death_star_plan.png" alt="death star plan"></figure></div>
+<aside role="note"><p>Here comes one of the best features of Asciidoc(tor) when it comes to comparing with its rival.
+File inclusion is a powerful tool that allows to split easily over multiple files while rendering in a consistent way.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+This slide deck is almost written using exclusively <code>include</code>
+</td>
+</tr>
+</table>
+</div></aside></section>
+<section><h2>Source highlighting</h2><div class="full-width build build-items"><pre class="source"><code data-lang="asciidoc" class="language-asciidoc prettyprint">[source,java]
+-----
+"NIH".equals(inventedLocation) ? "🐑" : "🐱"
+-----</code></pre>
+<pre class="source"><code data-lang="java" class="language-java prettyprint">"NIH".equals(inventedLocation) ? "🐑" : "🐱"</code></pre></div></section>
+<section><h2>Highlighter</h2><ul><li><span class="primary">pygments</span></li><li><span class="primary">coderay</span></li><li><span class="primary">rouge</span></li><li><span class="primary">highlight.js</span></li><li><span class="primary">prettify</span></li></ul>
+<aside role="note"><p>CodeRay &#8594; Asciidoctor, AsciidoctorJ, Asciidoctor PDF
+highlight.js &#8594; Asciidoctor, AsciidoctorJ, Asciidoctor.js
+prettify &#8594; Asciidoctor, AsciidoctorJ, Asciidoctor.js
+Pygments &#8594; Asciidoctor, Asciidoctor PDF
+Rouge &#8594; Asciidoctor PDF</p>
+<p>To use CodeRay, Pygments, or Rouge, you must have the appropriate library installed on your system. See the CodeRay or Pygments section to find installation instructions. (We don’t yet have a section about Rouge).</p>
+<p>On the other hand, if you’re using a client-side syntax highlighting library like highlight.js or prettify, there’s no need to install additional libraries. The generated HTML will load the required source files from a CDN (or custom URL or file path).</p></aside></section>
+<section><h2>Source annotation</h2><div class="two-columns left-content build build-items"><pre class="source"><code data-lang="asciidoc" class="language-asciidoc prettyprint">[source,groovy]
+-----
+persons.tap {  //&lt;1&gt;
+  name ?= 'unknown' //&lt;2&gt;
+}
+-----
+&lt;1&gt; 2.5+
+&lt;2&gt; 3.0+</code></pre>
+<pre class="source"><code data-lang="groovy" class="language-groovy prettyprint">persons.tap {  <i class="conum" data-value="1"></i><b>(1)</b>
+  name ?= 'unknown' <i class="conum" data-value="2"></i><b>(2)</b>
+}</code></pre>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>2.5+</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>3.0+</td>
+</tr>
+</table>
+</div></div></section>
+<section><h2>Graphing libraries</h2><ul><li><span class="primary">ditaa</span></li><li><span class="primary">graphviz</span></li><li><span class="primary">plantuml</span></li></ul></section>
+<section><h2>PlantUML</h2><div class="two-columns center build build-items"><pre class="source"><code data-lang="asciidoc" class="language-asciidoc prettyprint">    class BlockProcessor
+    class DiagramBlock
+    class DitaaBlock
+    class PlantUmlBlock
+
+    BlockProcessor &lt;|-- DiagramBlock
+    DiagramBlock &lt;|-- DitaaBlock
+    DiagramBlock &lt;|-- PlantUmlBlock</code></pre>
+<figure class="image"><img src="./images/diagram-classes.png" alt="diagram classes"></figure></div>
+<aside role="note"><p>When I say that includes are powerful, in fact this part is coming from the comments located on the top of a Groovy class file.</p>
+<p>You can really easily mix and match the code and its documentation.</p></aside></section>
+<section><h2>Inclusion superpowers</h2><pre class="source"><code data-lang="groovy" class="language-groovy prettyprint">/*
+ * Gigantic class to allow everything, please find UML below :
+
+    tag::uml[]
+    class BlockProcessor
+    class DiagramBlock
+    class DitaaBlock
+    class PlantUmlBlock
+
+    BlockProcessor &lt;|-- DiagramBlock
+    DiagramBlock &lt;|-- DitaaBlock
+    DiagramBlock &lt;|-- PlantUmlBlock
+    end::uml[]
+
+* @see java.lang.String
+*/
+class App{
+    public static void main(){
+        print("Look 'ma, I'm running an app !")
+    }
+}</code></pre>
+<aside role="note"><p>This come from the groovydoc. If the code moves, the doc is next to it. If the code is deleted, the doc is also deleted with it.</p>
+<p>Any good IDE will tend to help you refactor the doc too&#8230;&#8203;</p></aside></section>
+<section class="image" style="background-image: url(./images/full_where.gif); background-size: cover; background-repeat: no-repeat">
+<aside role="note"><p>Break, this is the end of the syntax journey.</p>
+<p>Let&#8217;s get back to where and how all this is used.</p></aside></section>
+<section><h2>Where is used Asciidoc ?</h2><ul><li><span class="primary">Groovy lang documentation</span></li><li><span class="primary">JBoss docs</span></li><li><span class="primary">Slide decks</span></li></ul></section>
+<section><h2>WTF Asciidoc vs Asciidoctor ?</h2><ul><li><span class="primary">Asciidoc is the language</span></li><li><span class="primary">Ruby implementation</span><ul><li><span class="primary">AsciidoctorJ Java binding</span></li><li><span class="primary">asciidoctor.js opal transpiled version</span></li></ul></li><li><span class="primary">Broader set of tags</span></li><li><span class="primary">More precise syntax</span></li></ul>
+<aside role="note"><p>Last release for asciidoc python version is from 2013, whereas there is still work being done nowadays on asciidoctor.</p></aside></section>
+<section><h2>Markdown vs Asciidoc shortlist</h2><ul><li><span class="primary">Document includes</span></li><li><span class="primary">Tables</span></li><li><span class="primary">Syntax highlighting</span></li></ul></section>
+<section class="image" style="background-image: url(./images/full_me.gif); background-size: cover; background-repeat: no-repeat">
+<aside role="note"><p>This is a suggestion for using this in your own projects.</p></aside></section>
+<section><h2>Project structure</h2><pre><code>src/
+   |__ docs/                          <i class="conum" data-value="1"></i><b>(1)</b>
+           |__ asciidoc/              <i class="conum" data-value="2"></i><b>(2)</b>
+                       |__ index.adoc <i class="conum" data-value="3"></i><b>(3)</b>
+   |__ main/
+   |__ test/</code></pre>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>docs directory</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>asciidoc "category"</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>entrypoint to documentation</td>
+</tr>
+</table>
+</div></section>
+<section><h2>Write content</h2><ul><li><span class="primary">vim</span></li><li><span class="primary">Visual Studio Code / Atom</span></li><li><span class="primary">IntelliJ IDEA</span></li><li><span class="primary">Asciidoctor.js live chrome extension</span></li><li><span class="primary">Whatever</span></li></ul></section>
+<section class="image" style="background-image: url(./images/full_maven.gif); background-size: cover; background-repeat: no-repeat"></section>
+<section><h2 class="build build-items">Plugin configuration</h2><pre class="source"><code data-lang="xml" class="language-xml prettyprint">&lt;plugin&gt;
+    &lt;groupId&gt;org.asciidoctor&lt;/groupId&gt;
+    &lt;artifactId&gt;asciidoctor-maven-plugin&lt;/artifactId&gt;
+    &lt;version&gt;${asciidoctor.maven.plugin.version}&lt;/version&gt;      <i class="conum" data-value="1"></i><b>(1)</b>
+    &lt;dependencies&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.jruby&lt;/groupId&gt;
+            &lt;artifactId&gt;jruby-complete&lt;/artifactId&gt;
+            &lt;version&gt;${jruby.version}&lt;/version&gt; <i class="conum" data-value="2"></i><b>(2)</b>
+        &lt;/dependency&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.asciidoctor&lt;/groupId&gt;
+            &lt;artifactId&gt;asciidoctorj&lt;/artifactId&gt;
+            &lt;version&gt;${asciidoctorj.version}&lt;/version&gt; <i class="conum" data-value="3"></i><b>(3)</b>
+        &lt;/dependency&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.asciidoctor&lt;/groupId&gt;
+            &lt;artifactId&gt;asciidoctorj-pdf&lt;/artifactId&gt;
+            &lt;version&gt;${asciidoctorj.pdf.version}&lt;/version&gt; <i class="conum" data-value="4"></i><b>(4)</b>
+        &lt;/dependency&gt;
+         &lt;dependency&gt;
+            &lt;groupId&gt;org.asciidoctor&lt;/groupId&gt;
+            &lt;artifactId&gt;asciidoctorj-diagram&lt;/artifactId&gt;
+            &lt;version&gt;${asciidoctorj.diagram.version}&lt;/version&gt;
+        &lt;/dependency&gt;
+    &lt;/dependencies&gt;
+    &lt;configuration&gt;
+        &lt;sourceDirectory&gt;src/docs/asciidoc&lt;/sourceDirectory&gt;
+         &lt;requires&gt;
+            &lt;require&gt;asciidoctor-diagram&lt;/require&gt;
+        &lt;/requires&gt;
+        &lt;attributes&gt;
+            &lt;sourcedir&gt;${project.build.sourceDirectory}&lt;/sourcedir&gt;
+            &lt;project-version&gt;${project.version}&lt;/project-version&gt;
+            &lt;basedir&gt;${project.basedir}&lt;/basedir&gt;
+        &lt;/attributes&gt;
+    &lt;/configuration&gt;</code></pre>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Add Asciidoctor plugin</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>Specify JRuby version</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>Specify AsciidoctorJ version</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="4"></i><b>4</b></td>
+<td>Specify Asciidoctor PDF backend</td>
+</tr>
+</table>
+</div></section>
+<section class="image" style="background-image: url(./images/full_output.gif); background-size: cover; background-repeat: no-repeat"></section>
+<section><h2>HTML</h2><pre class="source"><code data-lang="xml" class="language-xml prettyprint">&lt;backend&gt;html5&lt;/backend&gt;
+&lt;sourceHighlighter&gt;coderay&lt;/sourceHighlighter&gt; <i class="conum" data-value="1"></i><b>(1)</b>
+&lt;attributes&gt;
+    &lt;imagesdir&gt;./images&lt;/imagesdir&gt;
+    &lt;toc&gt;left&lt;/toc&gt;
+    &lt;icons&gt;font&lt;/icons&gt;
+    &lt;sectanchors&gt;true&lt;/sectanchors&gt;
+    &lt;!-- set the idprefix to blank --&gt;
+    &lt;idprefix/&gt;
+    &lt;idseparator&gt;-&lt;/idseparator&gt;
+    &lt;docinfo1&gt;true&lt;/docinfo1&gt;
+&lt;/attributes&gt;</code></pre>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Use specific highlighter</td>
+</tr>
+</table>
+</div></section>
+<section class="image" style="background-image: url(./images/full_html.png); background-size: contain; background-repeat: no-repeat"></section>
+<section><h2>PDF</h2><pre class="source"><code data-lang="xml" class="language-xml prettyprint">&lt;backend&gt;pdf&lt;/backend&gt;
+&lt;sourceHighlighter&gt;rouge&lt;/sourceHighlighter&gt;
+&lt;sourceDocumentName&gt;index.adoc&lt;/sourceDocumentName&gt;
+&lt;attributes&gt;
+    &lt;imagesdir&gt;./images&lt;/imagesdir&gt;
+    &lt;toc&gt;left&lt;/toc&gt;
+    &lt;icons&gt;font&lt;/icons&gt;
+    &lt;sectanchors&gt;true&lt;/sectanchors&gt;
+    &lt;!-- set the idprefix to blank --&gt;
+    &lt;idprefix/&gt;
+    &lt;idseparator&gt;-&lt;/idseparator&gt;
+    &lt;docinfo1&gt;true&lt;/docinfo1&gt;</code></pre></section>
+<section class="image" style="background-image: url(./images/full_pdf.png); background-size: cover; background-repeat: no-repeat">
+<aside role="note"><p>You can also output ePUB / docbook / manpage / latex / Deck.js / Reveal.js / Bespoke.js [Used here]</p></aside></section>
+<section class="image" style="background-image: url(./images/full_gradle.gif); background-size: cover; background-repeat: no-repeat"></section>
+<section><h2>Gradle version</h2><pre class="source"><code data-lang="groovy" class="language-groovy prettyprint">buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'org.asciidoctor:asciidoctor-gradle-plugin:1.5.3' <i class="conum" data-value="1"></i><b>(1)</b>
+        classpath 'org.asciidoctor:asciidoctorj-pdf:1.5.0-alpha.15' <i class="conum" data-value="2"></i><b>(2)</b>
+        classpath 'org.asciidoctor:asciidoctorj-diagram:1.5.4'
+    }
+}
+apply plugin: 'org.asciidoctor.convert'                             <i class="conum" data-value="1"></i><b>(1)</b>
+asciidoctorj {
+    version = '1.5.5'                                               <i class="conum" data-value="3"></i><b>(3)</b>
+}
+asciidoctor {
+  requires 'asciidoctor-diagram'
+  backends 'html5', 'pdf'                                           <i class="conum" data-value="4"></i><b>(4)</b>
+  attributes(                                                       <i class="conum" data-value="5"></i><b>(5)</b>
+        'build-gradle': file('build.gradle'),
+        'basedir': rootDir,
+        'imagesdir': file("$rootDir/src/docs/images"),
+        'source-highlighter': 'coderay',
+        'toc': 'left',
+        'icons': 'font',
+        'setanchors': '',
+        'idprefix': '',
+        'idseparator': '-',
+        'docinfo1': '')
+}</code></pre>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Add asciidoctor plugin</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>Add asciidoctor-pdf plugin</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>Specify Asciidoctor version</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="4"></i><b>4</b></td>
+<td>Configure output backends</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="5"></i><b>5</b></td>
+<td>Set attributes</td>
+</tr>
+</table>
+</div></section>
+<section class="image" style="background-image: url(./images/full_rw.gif); background-size: cover; background-repeat: no-repeat"></section>
+<section><h2>Slide decks</h2><ul><li><span class="primary">JavaEE @ EPUT</span></li><li><span class="primary">Docker Jenkins Slave BBL</span></li><li><span class="primary">Various tech talks @JUG / @Docker Meetup</span></li><li><span class="primary">These slides <a href="https://github.com/CedricGatay/asciidoctor-slides"><span class="icon"><i class="fa fa-github"></i></span></a></span></li></ul></section>
+<section><h2>@Code-Troopers</h2><ul><li><span class="primary">Blog and website</span></li><li><span class="primary">Internal documentation</span><ul><li><span class="primary">DNS Bindings</span></li><li><span class="primary">Projects README</span></li><li><span class="primary"><a href="https://github.com/code-troopers/ct"><code>.ctproject</code></a> documentation</span></li></ul></li></ul>
+<aside role="note"><pre class="screen"><samp>Blog -&gt; [previously Jekyll, now Hugo]</samp></pre>
+<p>We have our own tool for managing project launch in a consistent way by aliasing run commands to common verbs.</p>
+<p>However, it might be useful at times to generate a proper documentation</p></aside></section>
+<section class="image" style="background-image: url(./images/full_why.gif); background-size: cover; background-repeat: no-repeat">
+<aside role="note"><p>Ok&#8230;&#8203;</p>
+<p>That&#8217;s a lot of things, let&#8217;s sum up why are the benefits of using a cool thing like Asciidoctor.</p></aside></section>
+<section><h2>Easy to version</h2><figure class="image"><img src="./images/diff_text.png" alt="diff text"></figure>
+<aside role="note"><p>The first thing, the most obvious is the ease of comparing using a classical diff tool, you can easily see what has changed.</p>
+<p>No need to mess with revision mode or whatsoever</p></aside></section>
+<section><h2>Even visually</h2><figure class="image"><img src="./images/diff_visual.png" alt="diff visual"></figure>
+<aside role="note"><p>A nice thing is built in the most used  git web GUIs (github/bitbucket/gitlab) will show a visual diff of your content.</p>
+<p>You can use this in Pull request handling to see what has changed in the documentation.</p></aside></section>
+<section><h2>Write on the go</h2><figure class="image"><img src="./images/edit_github.png" alt="edit github"></figure>
+<aside role="note"><p>Are you aware of the "edit this file" magic button in git web GUIs.</p>
+<p>It allows easy and fast editing from wherever you are (even during a pull request review for example), it is a huge step forward
+better documentation. A lot of OSS projects have seen an increase in documentation quality since they use these kind of language.</p></aside></section>
+<section><h2>Annotate easily</h2><figure class="image"><img src="./images/annotate_github.png" alt="annotate github"></figure>
+<aside role="note"><p>The same applies to annotation on documentation. Reviewing easily from your phone is comfy, isn&#8217;t it ?</p></aside></section>
+<section><h2>Build with <strong>your</strong> tools</h2><figure class="image"><img src="./images/jenkins_build.png" alt="jenkins build"></figure>
+<aside role="note"><p>And as we&#8217;ve just discussed, you can build your doc with your usual tools and deploy accordingly.</p>
+<p>For instance, this project features a Jenkinsfile that publish the docs with the HTML publisher plugin, but you can then use
+FTP / SCP / Docker run (or a simple <code>python -m SimpleHTTPServer</code>) to serve the documentation.</p></aside></section>
+<section class="image" style="background-image: url(./images/full_bad.gif); background-size: cover; background-repeat: no-repeat">
+<aside role="note"><p>However you will face the bad side of things when using a great toolset like this one.</p></aside></section>
+<section><h2>Github does not follow <code>include</code></h2><figure class="image"><img src="./images/github_no_includes.png" alt="github no includes"></figure>
+<aside role="note"><p>Or partial <code>include</code> now, it properly links to other files.</p></aside></section>
+<section class="image" style="background-image: url(./images/word_bleh.png); background-size: cover; background-repeat: no-repeat">
+<aside role="note"><p>The other bad thing that will happen is when you <strong>MUST</strong> use MS Word (or Libre Office / Open Office / Pages)</p></aside></section>
+<section class="image" style="background-image: url(./images/full_books.gif); background-size: cover; background-repeat: no-repeat">
+<aside role="note"><p>Writing has never been this fun.</p></aside></section>
+<section><h2>Tips</h2><ul><li><span class="primary">Focus on content</span></li><li><span class="primary">Don&#8217;t hesitate to split over multiple files</span></li><li><span class="primary">Have fun writing doc</span></li><li><span class="primary">Use includes for living content</span></li></ul></section>
+<section><h2>Thank you</h2><ul><li><span class="primary">Wanna become :</span><ul><li><span class="primary">doc writer ?</span></li><li><span class="primary">speaker ? <span class="image"><img src="./images/gdg.png" alt="gdg" height="48"></span> <span class="image"><img src="./images/bbl.png" alt="bbl" height="48"></span></span></li><li><span class="primary">your own boss ?</span></li></ul></li></ul>
+<figure class="quote"><blockquote><p><span class="icon"><i class="fa fa-users"></i></span> Let&#8217;s have a chat !</p></blockquote></figure></section>
+<section class="image" style="background-image: url(./images/full_thx.gif); background-size: cover; background-repeat: no-repeat"></section></article><script src="build/build.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.js"></script><script>Array.prototype.forEach.call(document.querySelectorAll('i.conum+b'),function(n){n.parentNode.removeChild(n)})</script><script>prettyPrint()</script><script type="text/x-mathjax-config">MathJax.Hub.Config({
+  messageStyle: "none",
+  tex2jax: {
+    inlineMath: [["\\(", "\\)"]],
+    displayMath: [["\\[", "\\]"]],
+    ignoreClass: "nostem|nolatexmath"
+  },
+  asciimath2jax: {
+    delimiters: [["\\$", "\\$"]],
+    ignoreClass: "nostem|noasciimath"
+  }
+})</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.0/MathJax.js?config=TeX-MML-AM_HTMLorMML"></script></body></html>
